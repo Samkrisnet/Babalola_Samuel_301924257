@@ -45,7 +45,8 @@ I proposed three MongoDB replica members across separate failure zones. The disc
 
 I kept learner, course, enrollment in separate tables so their details could be maintained without repeating them in every related record. Enrollment status must be enrolled, completed, or withdrawn. The constraint tests check this alongside the required values and record links. One issue illustrated by the two-session exercise is that both sessions can read the same value before either update is committed. Locking the row before reading preserves both increments. The index comparison also shows why I need to check the execution plan as well as the final answer: the same result can require different amounts of database work.
 
-Project Timeline
+## Project Timeline
+
 This project was developed and refined over the past two weeks, with the final updates and completion work completed today. The repository reflects the final delivery state of the project, and the work was consolidated into the current version as part of the final review and submission process. The project timeline represents the full development period leading up to completion, rather than a day-by-day commit history. Final documentation and delivery were completed in the current stage to ensure the portfolio accurately reflects the finished work.
 
 ## AI-use declaration
