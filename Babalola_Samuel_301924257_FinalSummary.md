@@ -4,11 +4,11 @@
 
 ## Case study
 
-My case study is Online Learning & LMS Platform. I designed the database for learners enrolling in courses and participating in lessons. and instructors and administrators managing course offerings and reviewing participation., with separate tables named learner, course and enrollment. It supports these operations: create and manage learner and course records; enroll learners in courses and track enrollment status and scores; review enrollment details and summarize participation by course.
+My case study is based on Online Learning & LMS Platform, the database was originally designed for learners enrolling in different courses and participating in lessons.And,it's includes the instructors and administrators managing course offerings and reviewing participation, with separate tables identifying learner, course and enrollment. It supports these operations: create and manage learners and course records; enroll learners in courses and track enrollment status and scores; review enrollment details and summarize participation by course.
 
 ## Portfolio 1: Database Design and Modelling
 
-I organised the relational design into 3 tables. Primary keys identify records, foreign keys preserve the links, and checks enforce the stated business rules. Enrollment status must be enrolled, completed, or withdrawn. The normalisation examples show the sample data at 1NF, 2NF and 3NF. All 22 deliberately invalid inserts were rejected without changing the valid sample rows.
+The first portfolio organises the relational design into 3 tables. Primary keys identify records, foreign keys preserve the links, and checks enforce the stated business rules. Enrollment status must be enrolled, completed, or withdrawn. The normalization examples show the sample data at 1NF, 2NF and 3NF. All 22 deliberately invalid inserts were rejected without changing the valid sample rows.
 
 ![Online Learning & LMS Platform ER diagram](images/Babalola_Samuel_301924257_ERDiagram.png)
 
@@ -18,7 +18,7 @@ Figure 1. Tables, keys and relationships. PK: primary key; FK: foreign key; UK: 
 
 ## Portfolio 2: Query Processing and Optimisation
 
-I ran three SQL queries against the sample records. The join returned 2 rows and included learner.one@example.test with LMS-101. For the index comparison, I used 25,000 separate performance rows. The median lookup time changed from 1.485 ms to 0.232 ms. Both phases returned the same records. The measured plan used the new index. These timings apply to this lookup and environment.
+Here,I ran three SQL queries against the sample records;then joined and returned 2 rows and included learner.one@example.test with LMS-101. For the index comparison, I used 25,000 separate performance rows. The median lookup time changed from 1.485 ms to 0.232 ms. Both phases returned the same records. The measured plan used the new index. These timings apply to this lookup and environment.
 
 ## Portfolio 3: Transactions and Concurrency
 
@@ -44,6 +44,9 @@ I proposed three MongoDB replica members across separate failure zones. The disc
 ## Individual reflection
 
 I kept learner, course, enrollment in separate tables so their details could be maintained without repeating them in every related record. Enrollment status must be enrolled, completed, or withdrawn. The constraint tests check this alongside the required values and record links. One issue illustrated by the two-session exercise is that both sessions can read the same value before either update is committed. Locking the row before reading preserves both increments. The index comparison also shows why I need to check the execution plan as well as the final answer: the same result can require different amounts of database work.
+
+Project Timeline
+This project was developed and refined over the past two weeks, with the final updates and completion work completed today. The repository reflects the final delivery state of the project, and the work was consolidated into the current version as part of the final review and submission process. The project timeline represents the full development period leading up to completion, rather than a day-by-day commit history. Final documentation and delivery were completed in the current stage to ensure the portfolio accurately reflects the finished work.
 
 ## AI-use declaration
 
