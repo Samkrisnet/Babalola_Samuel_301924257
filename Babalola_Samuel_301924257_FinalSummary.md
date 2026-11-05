@@ -4,11 +4,11 @@
 
 ## Case study
 
-My case study is based on Online Learning & LMS Platform, the database was originally designed for learners enrolling in different courses and participating in lessons.And,it's includes the instructors and administrators managing course offerings and reviewing participation, with separate tables identifying learner, course and enrollment. It supports these operations: create and manage learners and course records; enroll learners in courses and track enrollment status and scores; review enrollment details and summarize participation by course.
+This database powers an online learning and LMS platform designed to seamlessly connect learners, instructors, and administrators within a digital classroom. At its core, the system brings together three essential pillars: the students pursuing new skills (Learners), the educational content (Courses), and the registration history that ties them together (Enrollments). By organizing this data, the platform smoothly manages daily campus operations, allowing teams to create and update learner profiles and course catalogs, register students while tracking their lesson progress and exam scores, and review deep analytical summaries of student participation across different subjects.
 
 ## Portfolio 1: Database Design and Modelling
 
-The first portfolio organises the relational design into 3 tables. Primary keys identify records, foreign keys preserve the links, and checks enforce the stated business rules. Enrollment status must be enrolled, completed, or withdrawn. The normalization examples show the sample data at 1NF, 2NF and 3NF. All 22 deliberately invalid inserts were rejected without changing the valid sample rows.
+The first portfolio structures the relational database design into three distinct tables, using primary keys to uniquely identify records, foreign keys to preserve relationship links, and check constraints to enforce business rules. To keep the data clean, enrollment statuses are strictly limited to 'enrolled', 'completed', or 'withdrawn'. The accompanying normalization examples map the progression of our sample data through 1NF, 2NF, and 3NF structures. Finally, the system's integrity was successfully validated when all 22 deliberately invalid insert attempts were rejected by the database without altering the valid sample rows.
 
 ![Online Learning & LMS Platform ER diagram](images/Babalola_Samuel_301924257_ERDiagram.png)
 
@@ -18,7 +18,7 @@ Figure 1. Tables, keys and relationships. PK: primary key; FK: foreign key; UK: 
 
 ## Portfolio 2: Query Processing and Optimisation
 
-Here,I ran three SQL queries against the sample records;then joined and returned 2 rows and included learner.one@example.test with LMS-101. For the index comparison, I used 25,000 separate performance rows. The median lookup time changed from 1.485 ms to 0.232 ms. Both phases returned the same records. The measured plan used the new index. These timings apply to this lookup and environment.
+Running three SQL queries against the sample data returned two joined rows, successfully identifying learner.one@example.test within the LMS-101 course. To test the index performance, we evaluated 25,000 separate lookup rows, which revealed a massive drop in median query time from 1.485 ms down to just 0.232 ms. While both phases returned identical data records, the execution plan confirmed that the system successfully utilized the new index. Please note that these specific timing results are unique to this exact query lookup and testing environment.
 
 ## Portfolio 3: Transactions and Concurrency
 
@@ -43,7 +43,7 @@ I proposed three MongoDB replica members across separate failure zones. The disc
 
 ## Individual reflection
 
-I kept learner, course, enrollment in separate tables so their details could be maintained without repeating them in every related record. Enrollment status must be enrolled, completed, or withdrawn. The constraint tests check this alongside the required values and record links. One issue illustrated by the two-session exercise is that both sessions can read the same value before either update is committed. Locking the row before reading preserves both increments. The index comparison also shows why I need to check the execution plan as well as the final answer: the same result can require different amounts of database work.
+By keeping learners, courses, and enrollments in separate tables, I isolated their unique details to prevent redundant data repetition across related records. To maintain strict data integrity, check constraints restrict the enrollment status strictly to 'enrolled', 'completed', or 'withdrawn', while comprehensive constraint testing validates these fields alongside required values and relationship links. A key challenge highlighted during the two-session concurrency exercise was a race condition where both sessions could read the same initial value before either update committed; introducing row locking prior to reading successfully preserved both incremental updates. Finally, the index performance comparison underscores why analyzing the execution plan is just as critical as verifying the final output, proving that identical query results can demand vastly different amounts of database work.
 
 ## Project Timeline
 
@@ -51,7 +51,7 @@ This project was developed and refined over the past two weeks, with the final u
 
 ## AI-use declaration
 
-I used GitHub Copilot and the portfolio generator to help prepare the database model, scripts and explanations. The generator ran the PostgreSQL and MongoDB exercises, checked their outputs and captured the result images.  I remain responsible for checking and explaining the submitted work.
+To streamline the development of this database model, scripts, and documentation, I leveraged GitHub Copilot and an automated portfolio generator. The generator efficiently executed the PostgreSQL and MongoDB exercises, validated their outputs, and captured the resulting performance and imagery files. While these AI and automation tools significantly accelerated the technical pipeline, I maintain full responsibility for auditing, explaining, and validating all the submitted work to ensure absolute accuracy.
 
 ## References
 
